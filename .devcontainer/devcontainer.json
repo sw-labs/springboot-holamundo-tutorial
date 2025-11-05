@@ -1,32 +1,32 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the
-// README at: https://github.com/devcontainers/templates/tree/main/src/java
+// Configuración para el devcontainer
+// - formato: https://aka.ms/devcontainer.json
 {
 	"name": "Java",
-	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/base:ubuntu-22.04",
 
+	// usa Ubuntu 24 como base
+	"image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
+
+	// agrega características de programación Java
 	"features": {
 		"ghcr.io/devcontainers/features/java:1": {
-			"version": "25",
-			"jdkDistro": "tem"
+			"version": "latest",
+			"jdkDistro": "ms",
+			"installMaven": true,
+			"installGradle": false
 		},
-		"ghcr.io/devcontainers-contrib/features/maven-sdkman:2": {},
-		"ghcr.io/devcontainers-contrib/features/mvnd-sdkman:2": {},
 		"ghcr.io/devcontainers-contrib/features/springboot-sdkman:2": {}
 	},
 
-	// Configure tool-specific properties.
+	// Configuraciones
 	"customizations": {
-		// Configure properties specific to VS Code.
+		// para VS Code.
 		"vscode": {
-			// Set *default* container specific settings.json values on container create.
 			"settings": { 
 			},
 			
-			// Add the IDs of extensions you want installed when the container is created.
 			"extensions": [
 				"vscjava.vscode-java-pack",
-				"Pivotal.vscode-boot-dev-pack"
+				"vmware.vscode-boot-dev-pack"
 			]
 		}
 	}
